@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Times New Roman", Times, serif;
+            background-color:white;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100vh;
+        }
+
+        .top-bar {
+            width: 100%;
+            background: #88b5e5;
+            color: #fff;
+            padding: 10px 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .top-bar .portfolio-name {
+            font-size: 1.5em;
+            font-weight: bold;
+            font-family: Arial, Arial, Helvetica, sans-serif;
+        }
+
+        .top-bar nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        .top-bar nav a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1em;
+            transition: color 0.3s ease;
+            font-family: Arial, Arial, Helvetica, sans-serif;
+        }
+
+        .top-bar nav b {
+            text-decoration: none;
+            color: #6a859b;
+            font-size: 1em;
+            transition: color 0.3s ease;
+            font-family: Arial, Arial, Helvetica, sans-serif;
+        }
+
+        .top-bar nav a:hover {
+            color: #cbd7e1;
+        }
+
+        header {
+            text-align: center;
+            margin-top: 100px;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 3em;
+            color: #333;
+        }
+
+        header p {
+            font-size: 1.2em;
+            color: #555;
+            margin-top: 10px;
+        }
+
+        .container {
+            max-width: 800px;
+            text-align: center;
+            padding: 20px;
+            background: #ecebeb;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .container h2 {
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+
+        .container p {
+            font-size: 1.1em;
+            color: #555;
+            font-family: "Times New Roman", Times, serif;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="portfolio-name">my portfolio</div>
+        <nav>
+            <b href="index.html">about</b>
+            <a href="#projects">projects</a>
+            <a href="contact.html">contact</a>
+        </nav>
+    </div>
+
+    <header>
+        <h1>hi! i'm yuliya</i></h1>
+    </header>
+
+    <div class="container">
+        <h2>about me</h2>
+        <p>
+            I am a second year Computer Science major at Northeastern University with a concentration in AI, as well as a minor in Linguistics. 
+            I am currently working as a Research Assistant at Queens University Belfast for my first co-op.
+        </p>
+        <p style="margin-top: 15px;">
+            <a href="resume_source/YuliyaButurlia_Resume_copy.pdf" target="_blank" style="text-decoration: none; color: #0077b5; font-weight: bold;">see my resume</a>
+        </p>
+    </div>
+
+</body>
+</html>
