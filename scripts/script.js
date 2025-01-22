@@ -1,21 +1,6 @@
 
-// Whale click heart animation
+// Whale travel animation
 const whale = document.getElementById('whale');
-
-whale.addEventListener('click', () => {
-    const heart = document.createElement('div');
-    heart.classList.add('heart');
-
-    const whaleRect = whale.getBoundingClientRect();
-    heart.style.left = `${whaleRect.width / 2 - 35}px`; 
-    heart.style.bottom = '60%'; 
-
-    whale.parentElement.appendChild(heart);
-
-    setTimeout(() => {
-        heart.remove();
-    }, 2000);
-});
 let position = 0; // Horizontal position in vw
 let direction = 1; // 1 for right, -1 for left
 
