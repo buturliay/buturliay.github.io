@@ -38,6 +38,25 @@ nav a:hover {
     color: #00bfff;
 }
 
+/* Responsive styles for mobile */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav .logo {
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    nav a {
+        display: block;
+        margin: 5px 0;
+        text-align: center;
+    }
+}
+
 section {
     padding: 50px 20px;
     max-width: 800px;
