@@ -1,31 +1,3 @@
-// // Function to create a floating cloud
-// function createCloud() {
-//     const cloud = document.createElement('div');
-//     cloud.className = 'cloud';
-
-//     // Start clouds slightly off-screen on the left
-//     cloud.style.left = '-5vw';
-//     cloud.style.bottom = `${Math.random() * 50 + 50}vh`; // Random height between 10vh and 40vh
-
-//     // Set the transparency and z-index to ensure it's in the background
-//     cloud.style.opacity = '0.5'; // Semi-transparent
-//     cloud.style.zIndex = '-1'; // Behind all other elements
-
-//     // Random duration for cloud movement
-//     const duration = Math.random() * 10 + 10; // Between 10s and 20s
-//     cloud.style.animation = `cloudFloat ${duration}s linear`;
-
-//     // Append the cloud to the document body
-//     document.body.appendChild(cloud);
-
-//     // Remove the cloud after its animation completes
-//     setTimeout(() => {
-//         cloud.remove();
-//     }, duration * 1000);
-// }
-
-// // Call createCloud every 3 seconds
-// setInterval(createCloud, 3000);
 
 // Whale click heart animation
 const whale = document.getElementById('whale');
@@ -43,4 +15,26 @@ whale.addEventListener('click', () => {
     setTimeout(() => {
         heart.remove();
     }, 2000);
+});
+let position = 0; // Horizontal position in vw
+let direction = 1; // 1 for right, -1 for left
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowRight') {
+        direction = 1;
+        position = Math.min(position + 5, 40); // Move right
+    } else if (event.key === 'ArrowLeft') {
+        direction = -1;
+        position = Math.max(position - 5, -40); // Move left
+    }
+
+    // Update whale position
+    whale.style.left = `${position}vw`;
+
+    // Flip the whale if needed
+    if (direction === 1) {
+        whale.classList.remove('flipped');
+    } else {
+        whale.classList.add('flipped');
+    }
 });
