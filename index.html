@@ -3,136 +3,271 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>my portfolio</title>
+    <title>Developer Portfolio</title>
     <style>
-        * {
+        /* General styles */
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            background-color: #001f3f;
+            color: white;
         }
 
-        body {
-            font-family: "Times New Roman", Times, serif;
-            background-color:white;
-            color: #333;
-            line-height: 1.6;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            height: 100vh;
-        }
-
-        .top-bar {
-            width: 100%;
-            background: #88b5e5;
-            color: #fff;
+        nav {
+            background-color: rgba(72, 129, 187, 1); 
             padding: 10px 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            position: fixed;
+            position: sticky;
             top: 0;
-            left: 0;
-            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            backdrop-filter: blur(5px); 
+            z-index: 4;
         }
 
-        .top-bar .portfolio-name {
+        nav .logo {
             font-size: 1.5em;
             font-weight: bold;
-            font-family: Arial, Arial, Helvetica, sans-serif;
+            color: white;
         }
 
-        .top-bar nav {
-            display: flex;
-            gap: 20px;
-        }
-
-        .top-bar nav a {
+        nav a {
+            color: white;
             text-decoration: none;
-            color: #fff;
-            font-size: 1em;
-            transition: color 0.3s ease;
-            font-family: Arial, Arial, Helvetica, sans-serif;
+            margin: 0 10px;
+            font-weight: bold;
+            transition: color 0.3s;
         }
 
-        .top-bar nav b {
-            text-decoration: none;
-            color: #6a859b;
-            font-size: 1em;
-            transition: color 0.3s ease;
-            font-family: Arial, Arial, Helvetica, sans-serif;
+        nav a:hover {
+            color: #00bfff;
         }
 
-        .top-bar nav a:hover {
-            color: #cbd7e1;
-        }
-
-        header {
-            text-align: center;
-            margin-top: 100px;
-            margin-bottom: 30px;
-        }
-
-        header h1 {
-            font-size: 3em;
-            color: #333;
-        }
-
-        header p {
-            font-size: 1.2em;
-            color: #555;
-            margin-top: 10px;
-        }
-
-        .container {
+        section {
+            padding: 50px 20px;
             max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(72, 129, 187, 0.4);
+            border-radius: 10px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .contact-item img {
+            width: 32px;
+            height: 32px;
+            margin-right: 10px;
+        }
+
+        .contact-item img:hover {
+            transform: scale(1.2);
+        }
+
+        #game {
             text-align: center;
-            padding: 20px;
-            background: #ecebeb;
-            border-radius: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 10px auto;
+            position: relative;
+            background-color: #001f3f;
+            z-index: 10; /* Ensures hearts appear above clouds */
         }
 
-        .container h2 {
-            font-size: 2em;
-            margin-bottom: 15px;
+        #whale {
+            width: 200px;
+            background-color: #001f3f;
+            cursor: pointer;
+            position: relative;
         }
 
-        .container p {
-            font-size: 1.1em;
-            color: #555;
-            font-family: "Times New Roman", Times, serif;
+
+        .heart {
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            background: url('heart.png') no-repeat center;
+            background-size: contain;
+            animation: floatUp 2s ease-out;
+            pointer-events: none;
+            z-index: 15; /* Ensure hearts are above everything */
         }
 
+        @keyframes floatUp {
+            0% {
+                opacity: 1;
+                transform: translateY(10px); /* Closer to whale */
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-30px); /* Reduced height */
+            }
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li::before {
+            content: '*';
+            margin-right: 10px;
+            color: white;
+        }
+
+        /* Cloud styles */
+        .cloud {
+            position: fixed; 
+            bottom: -100px;
+            width: 150px;
+            height: 100px;
+            background: url('cloud.png') no-repeat center;
+            background-size: contain;
+            opacity: 0.8;
+            pointer-events: none; 
+            z-index: 5;
+        }
+
+        @keyframes cloudFloat {
+            0% {
+                transform: translateY(0);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-120vh);
+                opacity: 0;
+            }
+        }
+
+        footer {
+            background-color: rgba(72, 129, 187, 0.8); 
+            color: white;
+            text-align: center;
+            padding: 10px 20px;
+            font-size: 0.9em;
+            position: relative; 
+            margin-top: 20px; 
+        }
     </style>
 </head>
 <body>
-    <div class="top-bar">
-        <div class="portfolio-name">my portfolio</div>
-        <nav>
-            <b href="index.html">about</b>
-            <a href="#projects">projects</a>
-            <a href="contact.html">contact</a>
-        </nav>
-    </div>
+    <nav>
+        <div class="logo">Yuliya Buturlia</div>
+        <div>
+            <a href="#about">About Me</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
 
-    <header>
-        <h1>hi! i'm yuliya</i></h1>
-    </header>
+    <section id="about">
+        <h1>About Me</h1>
+        <p>Hi! My name is Yuliya, and I am a second year computer science major at Northeastern University with a concentration in 
+            AI and a minor in linguistics. I am fascinated by applications of AI in data analysis and software development, as well
+            as the intersection of linguistics and computer science.</p>
+    </section>
 
-    <div class="container">
-        <h2>about me</h2>
-        <p>
-            I am a second year Computer Science major at Northeastern University with a concentration in AI, as well as a minor in Linguistics. 
-            I am currently working as a Research Assistant at Queens University Belfast for my first co-op.
-        </p>
-        <p style="margin-top: 15px;">
-            <a href="resume_source/YuliyaButurlia_Resume_copy.pdf" target="_blank" style="text-decoration: none; color: #0077b5; font-weight: bold;">see my resume</a>
-        </p>
-    </div>
+    <section id="projects">
+        <h1>Projects</h1>
+        <div style="background-color: rgba(0, 34, 68, .5); padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+            <h2>Connections Solver</h2>
+            <p>
+                <strong>Description:</strong> An AI Model capable of classifying words into categories based on semantic similarity, 
+                designed in the style of the New York Times' Connections game.
+            </p>
+            <p>
+                <strong>Key Tools:</strong> Python, Pygame, Word2Vec, Hidden Markov Model
+            </p>
+        </div>
+        <div style="background-color: rgba(0, 34, 68, .5); padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+            <h2>Northeastern Women In Pre-Law Website</h2>
+            <p>
+                <strong>Description:</strong> Still under construction! More to come.
+            </p>
+            <p>
+                <strong>Key Tools:</strong> React, Redux, Node.js, MongoDB
+            </p>
+        </div>
+        <div style="background-color: rgba(0, 34, 68, .5); padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+            <h2>Stock Explorer</h2>
+            <p>
+                <strong>Description: </strong> Leveraged an API to create an interactive model of stock portfolio.
+                In line with the MVC model and equipped with a complete GUI, this educational tool is capale of various
+                calculations such as moving averages, as well as stock trading simulations.
+            </p>
+            <p>
+                <strong>Key Tools:</strong> Java, Object Oriented Design, Model View Controller, Pair Programming, Unit Testing
+            </p>
+        </div>
+    </section>
 
+    <section id="contact">
+        <h1>Contact</h1>
+        <div class="contact-item">
+            <a href="https://www.linkedin.com/in/yuliya-buturlia/" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn logo">
+            </a>
+            <a href="https://github.com/buturliay" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub logo">
+            </a>
+        </div>
+    </section>
+
+    <section id="game">
+        <div style="position: relative; display: inline-block;">
+            <img id="whale" src="whale.png" alt="Whale">
+        </div>
+    </section>
+
+    <script>
+        // Function to create a floating cloud
+        function createCloud() {
+            const cloud = document.createElement('div');
+            cloud.className = 'cloud';
+
+            const isLeftSide = Math.random() > 0.5;
+
+            if (isLeftSide) {
+                // Clouds appear between -5vw and 10vw on the left
+                cloud.style.left = `${Math.random() * 12 - 5}vw`;
+            } else {
+                // Clouds appear between 80vw and 100vw on the right
+                cloud.style.left = `${Math.random() * 20 + 81}vw`;
+            }
+
+            const duration = Math.random() * 5 + 7; // Between 8s and 13s
+            cloud.style.animation = `cloudFloat ${duration}s linear`;
+
+            document.body.appendChild(cloud);
+
+            setTimeout(() => {
+                cloud.remove();
+            }, duration * 1000);
+        }
+
+        setInterval(createCloud, 3000);
+
+
+
+        // Whale click heart animation
+        const whale = document.getElementById('whale');
+
+        whale.addEventListener('click', () => {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+
+            const whaleRect = whale.getBoundingClientRect();
+            heart.style.left = `${whaleRect.width / 2 - 35}px`; 
+            heart.style.bottom = '60%'; 
+
+            whale.parentElement.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 2000);
+        });
+    </script>
+    <footer>
+        <p>&copy; 2025 Yuliya Buturlia. All rights reserved.</p>
+    </footer>
 </body>
 </html>

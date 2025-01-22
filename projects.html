@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Times New Roman", Times, serif;
+            background-color: white;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100vh;
+        }
+
+        .top-bar {
+            width: 100%;
+            background: #88b5e5;
+            color: #fff;
+            padding: 10px 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .top-bar .portfolio-name {
+            font-size: 1.5em;
+            font-weight: bold;
+            font-family: Arial, Arial, Helvetica, sans-serif;
+        }
+
+        .top-bar nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        .top-bar nav a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1em;
+            transition: color 0.3s ease;
+            font-family: Arial, Arial, Helvetica, sans-serif;
+        }
+
+        .top-bar nav b {
+            text-decoration: none;
+            color: #6a859b;
+            font-size: 1em;
+            transition: color 0.3s ease;
+            font-family: Arial, Arial, Helvetica, sans-serif;
+        }
+
+        .top-bar nav a:hover {
+            color: #cbd7e1;
+        }
+
+        header {
+            text-align: center;
+            margin-top: 100px;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 3em;
+            color: #333;
+        }
+
+        header p {
+            font-size: 1.2em;
+            color: #555;
+            margin-top: 10px;
+        }
+
+        .project-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 90%;
+            max-width: 800px;
+        }
+
+        .project-card {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            background: #eaf6ff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            gap: 25px;
+        }
+
+        .project-info {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .project-info h2 {
+            font-size: 1.5em;
+            color: #0077b5;
+            margin-bottom: 10px;
+        }
+
+        .project-info p {
+            font-size: 1em;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .project-details {
+        flex: 1;
+        min-width: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        text-align: center; 
+    }
+
+    .project-details ul {
+        list-style: none;
+        padding: 0;
+        width: 100%;
+    }
+
+    .project-details ul li {
+        margin-bottom: 10px;
+        font-size: 1em;
+        color: #333;
+    }
+
+    .project-details ul li a.github-button {
+        font-family: Arial, Arial, Helvetica, sans-serif;
+        display: inline-block;
+        padding: 5px 10px; 
+        background: #0077b5;
+        color: white;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 0.8em;
+        font-weight: bold;
+        text-decoration: none;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        margin: 5px 0;
+    }
+
+    .project-details ul li a.github-button:hover {
+        background-color: #005f8d;
+        transform: scale(1.05);
+    }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="portfolio-name">my portfolio</div>
+        <nav>
+            <a href="index.html">about</a>
+            <b href="projects.html">projects</b>
+            <a href="contact.html">contact</a>
+        </nav>
+    </div>
+
+    <header>
+        <h1>My Projects</h1>
+    </header>
+
+    <div class="project-container">
+        <div class="project-card">
+            <div class="project-info">
+                <h2>AI Model: Connection Solver</h2>
+                <p>A semantic word categorization model created to solve a New York Times Connections inspired game.</p>
+            </div>
+            <div class="project-details">
+                <ul>
+                    <li><strong>Utilized:</strong> Python, PyGame, NumPy, Hidden Markov Model, Viterbi Algorithm, Word2Vec</li>
+                    <li>
+                        <a href="https://github.com/username/project1" 
+                           target="_blank" class="github-button">GitHub Repo</a>
+                        <a href="hblank for now" 
+                           target="_blank" class="github-button" download>Research Paper</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-info">
+                <h2>Project Title 2</h2>
+                <p>A brief overview of this project and what it accomplishes. Highlight any key goals or achievements.</p>
+            </div>
+            <div class="project-details">
+                <ul>
+                    <li><strong>Languages:</strong> Python, Flask</li>
+                    <li><strong>Skills:</strong> API Development, Database Management</li>
+                    <li><a href="https://github.com/username/project2" target="_blank">GitHub Link</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
