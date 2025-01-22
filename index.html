@@ -70,7 +70,7 @@
             margin: 10px auto;
             position: relative;
             background-color: #001f3f;
-            z-index: 10; /* Ensures hearts appear above clouds */
+            z-index: 10; 
         }
 
         #whale {
@@ -85,21 +85,21 @@
             position: absolute;
             width: 70px;
             height: 70px;
-            background: url('heart.png') no-repeat center;
+            background: url('images/heart.png') no-repeat center;
             background-size: contain;
             animation: floatUp 2s ease-out;
             pointer-events: none;
-            z-index: 15; /* Ensure hearts are above everything */
+            z-index: 15; 
         }
 
         @keyframes floatUp {
             0% {
                 opacity: 1;
-                transform: translateY(10px); /* Closer to whale */
+                transform: translateY(10px); 
             }
             100% {
                 opacity: 0;
-                transform: translateY(-30px); /* Reduced height */
+                transform: translateY(-30px);
             }
         }
 
@@ -120,7 +120,7 @@
             bottom: -100px;
             width: 150px;
             height: 100px;
-            background: url('cloud.png') no-repeat center;
+            background: url('images/cloud.png') no-repeat center;
             background-size: contain;
             opacity: 0.8;
             pointer-events: none; 
@@ -214,7 +214,7 @@
 
     <section id="game">
         <div style="position: relative; display: inline-block;">
-            <img id="whale" src="whale.png" alt="Whale">
+            <img id="whale" src="images/whale.png" alt="Whale">
         </div>
     </section>
 
