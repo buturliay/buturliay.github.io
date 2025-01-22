@@ -67,7 +67,7 @@ section {
 }
 
 #whale {
-    width: 200px;
+    width: 100px;
     background-color: rgba(0, 31, 63, 0);
     cursor: pointer;
     position: relative;
@@ -76,6 +76,19 @@ section {
 
 .flipped {
     transform: scaleX(-1);
+}
+
+.spin {
+    animation: spin 0.5s linear;
+}
+
+@keyframes spin {
+    from {
+        transform: translate(0,0) rotate(0deg);
+    }
+    to {
+        transform: translate(0%, 0%) rotate(360deg);
+    }
 }
 
 
