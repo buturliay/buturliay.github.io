@@ -51,9 +51,10 @@ nav a:hover {
     }
 
     nav a {
-        display: block;
-        margin: 0 5px;
+        display: flex;
+        flex-wrap: wrap;
         text-align: center;
+        gap: 10px;
     }
 }
 
