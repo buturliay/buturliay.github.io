@@ -12,7 +12,7 @@ export const projectsData: Project[] = [
   },
   {
     title: 'Northeastern Women In Pre-Law Website',
-    description: 'Still under construction! An informative website for Northeastern Women In Pre-Law.',
+    description: 'An informative website for Northeastern Women In Pre-Law.',
     tools: ['HTML', 'CSS', 'JavaScript', 'GitHub Pages']
   },
   {

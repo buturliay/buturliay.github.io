@@ -1,35 +1,34 @@
 import styled from '@emotion/styled';
 
-export const Container = styled.div`
-  max-width: 1400px;
+export const Container = styled.main`
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 4rem 2rem;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  background: white;
+  padding: 50px;
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out forwards;
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 `;
 
 export const Section = styled.section`
-  margin-bottom: 8rem;
-  position: relative;
+  margin-bottom: 4rem;
+  padding: 50px;
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out forwards;
 
   h2 {
     font-size: 1.5rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 4rem;
-    color: #001F3F;
-    font-weight: 600;
-    position: relative;
-    padding-left: 3rem;
-
-    &::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 50%;
-      width: 2rem;
-      height: 1px;
-      background: #001F3F;
-    }
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: #333;
   }
 `; 
